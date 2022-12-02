@@ -1,38 +1,124 @@
 .App {
+  background-color: #635e87;
+  color: #CFCAA8;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+}
+
+.TitleBar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 10vh;
+  background: white;
+}
+
+.Tile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Container {
+  background: white;
+  color: black;
+  width: 40vw;
+  height: auto;
+  padding: 8px;
+  margin: 20px 10px 20px 0px;
+}
+
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 25%;
+}
+
+.Login {
+  display: flex;
+  flex-direction: row;
+  width: 70vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Create {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.TextArea {
+  height: 100px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.ButtonGroup {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.Button {
+  border-radius: 2px;
+  border: none;
+  width: 30%;
+  height: 30px;
+  cursor: pointer;
+}
+
+.LoginContent {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Title {
+  font-weight: bold;
+  font-size: 96px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.TitleName {
+  font-weight: bold;
+  font-size: 48px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.Content {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.SignOut {
+  background: red;
   color: white;
+  position: fixed;
+  top: 2vh;
+  right: 5vw;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 900px) {
+  .Login {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Title {
+    font-size: 54px;
+    margin-bottom: 20px;
+  }
+
+  .Create {
+    width: 80%;
   }
 }
