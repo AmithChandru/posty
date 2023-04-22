@@ -15,16 +15,16 @@ const Home = (props) => {
     var navigate = useNavigate();
 
     useEffect(() => {
-        if (props.userDetails){
+        if (props.userDetails) {
             signedIn = true;
         };
         signedIn ?
             setDisplayText('There are no posts. Create a post to display.')
-        :
+            :
             setDisplayText('There are no posts. Login to create a post');
         signedIn ?
             setTitleText('Click here to create a post!')
-        :
+            :
             setTitleText('Click here to login');
         getData();
     })
@@ -33,7 +33,7 @@ const Home = (props) => {
         getDocs(collection(db, 'posts'))
             .then((querySnapshot) => {
                 let temp = querySnapshot.docs
-                    .map((doc) => ({...doc.data(), id: doc.id }));
+                    .map((doc) => ({ ...doc.data(), id: doc.id }));
                 setPost(temp);
                 setLoading(false);
             });
@@ -48,7 +48,7 @@ const Home = (props) => {
     const handleTitleClick = () => {
         signedIn ?
             navigate('/create')
-        :
+            :
             navigate('/login');
     }
 
@@ -65,19 +65,19 @@ const Home = (props) => {
             </button>
             {loading ?
                 <ReactLoading type='spin' />
-            :
+                :
                 post.length === 0 ?
                     <div>
                         <span className='TitleName'>
                             {displayText}
                         </span>
                     </div>
-                :
+                    :
                     <div>
                         <span className='Title'>
                             Posts
                         </span>
-                        { post.map((element) => {
+                        {post.map((element) => {
                             return (
                                 <div className='Tile'>
                                     <div className='Container'>
@@ -95,9 +95,9 @@ const Home = (props) => {
                     </div>
             }
             {!loading &&
-            <span className='Content' onClick={handleTitleClick} style={{ textDecoration: 'underline', textAlign: 'center', marginTop: '12px', cursor: 'pointer' }}>
-                {titleText}
-            </span>
+                <span className='Content' onClick={handleTitleClick} style={{ textDecoration: 'underline', textAlign: 'center', marginTop: '12px', cursor: 'pointer' }}>
+                    {titleText}
+                </span>
             }
         </div>
     );
